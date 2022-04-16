@@ -23,6 +23,7 @@ Just ... ``pyconwaysgame``
 optional arguments:
   -h, --help         show the help message and exit
   -u, --update       self-update
+  -d, --deaths       show deaths
   -s X, --speed X    speed factor, number of generation per second. 1 by default.
   -c X, --columns X  number of columns in the grid, 10 by default
   -l X, --lines X    number of lines in the grid, 10 by default
@@ -54,3 +55,14 @@ optional arguments:
  `` pip3 install --upgrade pyconwaysgame``
 
 *_Install pip instead of pip3, if pip3 does not exist for your OS_
+
+## :package: Changelog
+
+See [this page](CHANGELOG.md)
+
+## License
+
+MIT License
+
+See [this page](LICENSE.txt) for details
+

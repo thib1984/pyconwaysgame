@@ -38,6 +38,12 @@ def compute_args():
         help="self-update",
     ),
     my_parser.add_argument(
+        "-d",
+        "--deaths",
+        action="store_true",
+        help="show deaths",
+    ),
+    my_parser.add_argument(
         "-s",
         "--speed",
         metavar="X",
