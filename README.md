@@ -31,7 +31,7 @@ optional arguments:
   -B X, --born X     number of alived neighbours to born (3-3 by default)
   -S X, --survive X  number of alived neighbours to survive (2-3 by default)
 ```  
-## ⚙️ Install
+## ⚙️ Install/Upgrade
 
 ### Prerequisites
 
@@ -40,13 +40,12 @@ optional arguments:
 - Install git for your system
 
 
-### Prerequisites
- Installation 
+ ### Installation 
 
 ``pip3 install pyconwaysgame``
 
-### Prerequisites
- Upgrade 
+### Upgrade
+
 
 ``pyconwaysgame -u``
  
