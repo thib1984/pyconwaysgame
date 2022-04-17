@@ -20,17 +20,16 @@ Just ... ``pyconwaysgame``
 ## 🚀🚀 Options
 
 ```
-optional arguments:
-  -h, --help         show the help message and exit
+  -h, --help         show this help message and exit
   -u, --update       self-update
   -d, --deaths       show deaths
-  -s X, --speed X    speed factor, number of generation per second. 1 by default.
-  -c X, --columns X  number of columns in the grid, 10 by default
-  -l X, --lines X    number of lines in the grid, 10 by default
-  -r X, --ratio X    ratio percentage of alived cells in initial grid (50 by default,
-                     randomly for every cell)
-  -B X, --born X     number of alived neighbours to born (3-3 by default)
-  -S X, --survive X  number of alived neighbours to survive (2-3 by default)
+  -s X, --speed X    speed factor, number of generation per second. 1 by default. 0 to manual change, 0-10
+  -c X, --columns X  number of columns in the grid, 10 by default, 5-200
+  -l X, --lines X    number of lines in the grid, 10 by default, 5-200
+  -r X, --ratio X    ratio percentage of alived cells in initial grid (50 by default, randomly for every cell), should be in 0-100 range
+  -B X, --born X     number of alived neighbours to born (3-3 by default), should be in 0-8 range
+  -S X, --survive X  number of alived neighbours to survive (2-3 by default), should be in 0-8 range
+
 ```  
 ## ⚙️ Install/Upgrade
 
