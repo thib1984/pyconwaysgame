@@ -63,5 +63,5 @@ See [this page](CHANGELOG.md)
 
 MIT License
 
-See [this page](LICENSE.txt) for details
+See [this page](LICENSE) for details
 
