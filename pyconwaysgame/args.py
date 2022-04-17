@@ -44,6 +44,12 @@ def compute_args():
         help="show deaths",
     ),
     my_parser.add_argument(
+        "-b",
+        "--ball",
+        action="store_true",
+        help="ball mode, bottom/up and left/right grid are connected",
+    ),    
+    my_parser.add_argument(
         "-s",
         "--speed",
         metavar="X",
@@ -52,33 +58,6 @@ def compute_args():
         default=1, 
         help="speed factor, number of generation per second. 1 by default. 0 to manual change, 0-10",
     )  
-    my_parser.add_argument(
-        "-c",
-        "--columns",
-        metavar="X",
-        action="store",
-        type=int,
-        default=10,
-        help="number of columns in the grid, 10 by default, 5-200",
-    )  
-    my_parser.add_argument(
-        "-l",
-        "--lines",
-        metavar="X",
-        action="store",
-        type=int,
-        default=10,      
-        help="number of lines in the grid, 10 by default, 5-200",
-    ) 
-    my_parser.add_argument(
-        "-r",
-        "--ratio",
-        metavar="X",
-        action="store",
-        type=int,
-        default=50,
-        help="ratio percentage of alived cells in initial grid (50 by default, randomly for every cell), should be in 0-100 range",
-    ) 
     my_parser.add_argument(
         "-B",
         "--born",
@@ -96,7 +75,41 @@ def compute_args():
         type=str,
         default="2-3",
         help="number of alived neighbours to survive (2-3 by default), should be in 0-8 range",
-    )                     
+    ) 
+    my_parser.add_argument(
+        "-c",
+        "--columns",
+        metavar="X",
+        action="store",
+        type=int,
+        default=10,
+        help="number of columns in the grid if random, 10 by default, 5-200",
+    )  
+    my_parser.add_argument(
+        "-l",
+        "--lines",
+        metavar="X",
+        action="store",
+        type=int,
+        default=10,      
+        help="number of lines in the grid if random, 10 by default, 5-200",
+    ) 
+    my_parser.add_argument(
+        "-r",
+        "--ratio",
+        metavar="X",
+        action="store",
+        type=int,
+        default=50,
+        help="ratio percentage of alived cells in initial grid if random (50 by default, randomly for every cell), should be in 0-100 range",
+    )     
+    my_parser.add_argument(
+        "grid",
+        metavar="grid",
+        type=str,
+        nargs="?",
+        help="grid in txt file. 0/1/2 values in rectangular format. Without argument, the grid is randomly generated in 10*10 cells with 50 percent of alived",
+    )                   
 
     args = my_parser.parse_args()
     return args

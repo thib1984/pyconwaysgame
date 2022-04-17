@@ -1,3 +1,8 @@
+## 2.0.0
+
+- fix verify value for ratio/column
+- add glob mode
+- add grid parameter
 ## 1.0.0
 
 - verify option values

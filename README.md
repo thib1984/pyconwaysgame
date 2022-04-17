@@ -20,16 +20,20 @@ Just ... ``pyconwaysgame``
 ## 🚀🚀 Options
 
 ```
+positional arguments:
+  grid               grid in txt file. 0/1/2 values in rectangular format. Without argument, the grid is randomly generated in 10*10 cells with 50 percent of alived
+
+optional arguments:
   -h, --help         show this help message and exit
   -u, --update       self-update
   -d, --deaths       show deaths
+  -b, --ball         ball mode, bottom/up and left/right grid are connected
   -s X, --speed X    speed factor, number of generation per second. 1 by default. 0 to manual change, 0-10
-  -c X, --columns X  number of columns in the grid, 10 by default, 5-200
-  -l X, --lines X    number of lines in the grid, 10 by default, 5-200
-  -r X, --ratio X    ratio percentage of alived cells in initial grid (50 by default, randomly for every cell), should be in 0-100 range
   -B X, --born X     number of alived neighbours to born (3-3 by default), should be in 0-8 range
   -S X, --survive X  number of alived neighbours to survive (2-3 by default), should be in 0-8 range
-
+  -c X, --columns X  number of columns in the grid if random, 10 by default, 5-200
+  -l X, --lines X    number of lines in the grid if random, 10 by default, 5-200
+  -r X, --ratio X    ratio percentage of alived cells in initial grid if random (50 by default, randomly for every cell), should be in 0-100 range
 ```  
 ## ⚙️ Install/Upgrade
 
