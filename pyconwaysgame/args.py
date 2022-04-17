@@ -49,8 +49,8 @@ def compute_args():
         metavar="X",
         action="store",
         type=int,
-        default=1,
-        help="speed factor, number of generation per second. 1 by default.",
+        default=1, 
+        help="speed factor, number of generation per second. 1 by default. 0 to manual change, 0-10",
     )  
     my_parser.add_argument(
         "-c",
@@ -59,7 +59,7 @@ def compute_args():
         action="store",
         type=int,
         default=10,
-        help="number of columns in the grid, 10 by default",
+        help="number of columns in the grid, 10 by default, 5-200",
     )  
     my_parser.add_argument(
         "-l",
@@ -67,8 +67,8 @@ def compute_args():
         metavar="X",
         action="store",
         type=int,
-        default=10,
-        help="number of lines in the grid, 10 by default",
+        default=10,      
+        help="number of lines in the grid, 10 by default, 5-200",
     ) 
     my_parser.add_argument(
         "-r",
@@ -77,7 +77,7 @@ def compute_args():
         action="store",
         type=int,
         default=50,
-        help="ratio percentage of alived cells in initial grid (50 by default, randomly for every cell)",
+        help="ratio percentage of alived cells in initial grid (50 by default, randomly for every cell), should be in 0-100 range",
     ) 
     my_parser.add_argument(
         "-B",
@@ -86,7 +86,7 @@ def compute_args():
         action="store",
         type=str,
         default="3-3",
-        help="number of alived neighbours to born (3-3 by default)",
+        help="number of alived neighbours to born (3-3 by default), should be in 0-8 range",
     )
     my_parser.add_argument(
         "-S",
@@ -95,7 +95,7 @@ def compute_args():
         action="store",
         type=str,
         default="2-3",
-        help="number of alived neighbours to survive (2-3 by default)",
+        help="number of alived neighbours to survive (2-3 by default), should be in 0-8 range",
     )                     
 
     args = my_parser.parse_args()
