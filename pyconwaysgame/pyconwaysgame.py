@@ -15,6 +15,7 @@ import subprocess
 from shutil import which
 import re
 from termcolor import colored
+import colorama
 
 MICROB_EMOJI = "\U0001f9a0"
 BONE_EMOJI=	"\U0001f9b4"
@@ -23,6 +24,7 @@ def pyconwaysgame():
     """
     pyconwaysgame entry point
     """
+    colorama.init();
     if compute_args().update:
         update()
         exit()
