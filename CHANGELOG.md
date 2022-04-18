@@ -1,3 +1,7 @@
+## 2.0.1
+
+- colored output
+- fix help message
 ## 2.0.0
 
 - fix verify value for ratio/column
