@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="pyconwaysgame",
-    version="2.0.0",
+    version="2.0.1",
     description="game of life",
     long_description="The complete description/installation/use/FAQ is available at : https://github.com/thib1984/pyconwaysgame#readme",
     url="https://github.com/thib1984/pyconwaysgame",
@@ -11,11 +11,11 @@ setup(
     author_email="thibault.garcon@gmail.com",
     license="MIT",
     packages=["pyconwaysgame"],
-    install_requires=["columnar","click"],
+    install_requires=["columnar","click","termcolor"],
     zip_safe=False,
     entry_points={
         "console_scripts": [
-            "pyconwaysgame=pyconwaysgame.__init__:pyconwaysgame"
+            "pyconwaysgame=pyconwaysgame.pyconwaysgame:pyconwaysgame"
         ],
     },
     classifiers=[

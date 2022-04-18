@@ -21,19 +21,19 @@ Just ... ``pyconwaysgame``
 
 ```
 positional arguments:
-  grid               grid in txt file. 0/1/2 values in rectangular format. Without argument, the grid is randomly generated in 10*10 cells with 50 percent of alived
+  grid               grid file in txt format. 0/1/2 values in rectangular format. Without argument, the grid is randomly generated in 10*10 cells with 50 percent of alived
 
 optional arguments:
   -h, --help         show this help message and exit
-  -u, --update       self-update
-  -d, --deaths       show deaths
-  -b, --ball         ball mode, bottom/up and left/right grid are connected
-  -s X, --speed X    speed factor, number of generation per second. 1 by default. 0 to manual change, 0-10
-  -B X, --born X     number of alived neighbours to born (3-3 by default), should be in 0-8 range
-  -S X, --survive X  number of alived neighbours to survive (2-3 by default), should be in 0-8 range
-  -c X, --columns X  number of columns in the grid if random, 10 by default, 5-200
-  -l X, --lines X    number of lines in the grid if random, 10 by default, 5-200
-  -r X, --ratio X    ratio percentage of alived cells in initial grid if random (50 by default, randomly for every cell), should be in 0-100 range
+  -d, --deaths       show deaths cells in the previous generation
+  -b, --ball         ball mode : bottom/up and left/right of the grid are respectively connected
+  -s X, --speed X    speed factor, number of generation per second. 1 by default. 0 to manual change with any key press, range : 0-10
+  -B X, --born X     number of alived neighbours to born (3-3 by default), range : 0-8
+  -S X, --survive X  number of alived neighbours to survive (2-3 by default), range : 0-8
+  -c X, --columns X  number of columns in the randomed grid, 10 by default, range : 0-200
+  -l X, --lines X    number of lines in the randomed grid, 10 by default, range : 0-200
+  -r X, --ratio X    alived element probability ratio for each random grid cell (50 by default), range : 0-200
+  -u, --update       self-update, alternatively, use pip(3) install --upgrade pyconwaysgame for manual update
 ```  
 ## ⚙️ Install/Upgrade
 
