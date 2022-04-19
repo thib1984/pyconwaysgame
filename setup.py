@@ -11,7 +11,7 @@ setup(
     author_email="thibault.garcon@gmail.com",
     license="MIT",
     packages=["pyconwaysgame"],
-    install_requires=["columnar","click","termcolor"],
+    install_requires=["columnar","click","termcolor","colorama"],
     zip_safe=False,
     entry_points={
         "console_scripts": [
