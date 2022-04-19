@@ -1,3 +1,6 @@
+## 2.0.2
+
+- add missing colorama dependency
 ## 2.0.1
 
 - colored output
