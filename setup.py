@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="pyconwaysgame",
-    version="2.1.0",
+    version="2.1.1",
     description="game of life",
     long_description="The complete description/installation/use/FAQ is available at : https://github.com/thib1984/pyconwaysgame#readme",
     url="https://github.com/thib1984/pyconwaysgame",
