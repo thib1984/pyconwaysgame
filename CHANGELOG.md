@@ -1,6 +1,12 @@
+## 2.1.0
+
+- add --number for number generation
+- add --tutorial for pre-calcuadted map
+
 ## 2.0.2
 
 - add missing colorama dependency
+
 ## 2.0.1
 
 - colored output

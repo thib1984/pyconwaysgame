@@ -43,7 +43,16 @@ Written by thib1984."""
         "--ball",
         action="store_true",
         help="ball mode : bottom/up and left/right of the grid are respectively connected",
-    ),    
+    ),
+    my_parser.add_argument(
+        "-n",
+        "--number",
+        metavar="X",
+        action="store",
+        type=int,
+        default=-1, 
+        help="numer generation before stop",
+    )          
     my_parser.add_argument(
         "-s",
         "--speed",
@@ -105,6 +114,15 @@ Written by thib1984."""
         nargs="?",
         help="grid file in txt format. 0/1/2 values in rectangular format. Without argument, the grid is randomly generated in 10*10 cells with 50 percent of alived",
     )
+    my_parser.add_argument(
+        "-t",
+        "--tutorial",
+        metavar="X",
+        action="store",
+        type=str,
+        default="",
+        help="pre-calculated map, launch -t help to see availables map. Overrides few options as -b/-c/-l.",
+    )     
     my_parser.add_argument(
         "-u",
         "--update",

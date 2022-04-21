@@ -15,25 +15,28 @@ or diagonally adjacent. At each step in time, the following transitions occur:
 ![image](./pygameoflife.gif)
 ## 🚀 How to use **pyconwaysgame**
 
-Just ... ``pyconwaysgame`` 
+Just ... ``pyconwaysgame`` or for an example of pre-calculated map ``pyconwaysgame -t clock``
 
 ## 🚀🚀 Options
 
 ```
 positional arguments:
-  grid               grid file in txt format. 0/1/2 values in rectangular format. Without argument, the grid is randomly generated in 10*10 cells with 50 percent of alived
+  grid                grid file in txt format. 0/1/2 values in rectangular format. Without argument, the grid is randomly generated in 10*10 cells with 50 percent of alived
 
 optional arguments:
-  -h, --help         show this help message and exit
-  -d, --deaths       show deaths cells in the previous generation
-  -b, --ball         ball mode : bottom/up and left/right of the grid are respectively connected
-  -s X, --speed X    speed factor, number of generation per second. 1 by default. 0 to manual change with any key press, range : 0-10
-  -B X, --born X     number of alived neighbours to born (3-3 by default), range : 0-8
-  -S X, --survive X  number of alived neighbours to survive (2-3 by default), range : 0-8
-  -c X, --columns X  number of columns in the randomed grid, 10 by default, range : 0-200
-  -l X, --lines X    number of lines in the randomed grid, 10 by default, range : 0-200
-  -r X, --ratio X    alived element probability ratio for each random grid cell (50 by default), range : 0-200
-  -u, --update       self-update, alternatively, use pip(3) install --upgrade pyconwaysgame for manual update
+  -h, --help          show this help message and exit
+  -d, --deaths        show deaths cells in the previous generation
+  -b, --ball          ball mode : bottom/up and left/right of the grid are respectively connected
+  -n X, --number X    numer generation before stop
+  -s X, --speed X     speed factor, number of generation per second. 1 by default. 0 to manual change with any key press, range : 0-10
+  -B X, --born X      number of alived neighbours to born (3-3 by default), range : 0-8
+  -S X, --survive X   number of alived neighbours to survive (2-3 by default), range : 0-8
+  -c X, --columns X   number of columns in the randomed grid, 10 by default, range : 0-200
+  -l X, --lines X     number of lines in the randomed grid, 10 by default, range : 0-200
+  -r X, --ratio X     alived element probability ratio for each random grid cell (50 by default), range : 0-200
+  -t X, --tutorial X  pre-calculated map, launch -t help to see availables map. Overrides few options as -b/-c/-l.
+  -u, --update        self-update, alternatively, use pip(3) install --upgrade pyconwaysgame for manual update
+
 ```  
 ## ⚙️ Install/Upgrade
 

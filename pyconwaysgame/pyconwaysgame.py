@@ -30,12 +30,18 @@ def pyconwaysgame():
         exit()
              
     try:
-        tab, show_death, ball_mode, speed, manual, lines, columns, ratio, min_to_life, max_to_life, min_to_born, max_to_born = init_args()
-        if not compute_args().grid:
+        ngen, tab, show_death, ball_mode, speed, manual, lines, columns, ratio, min_to_life, max_to_life, min_to_born, max_to_born = init_args()
+        if not compute_args().grid and compute_args().tutorial == "":
             tab = generate_random_grid(lines, columns, ratio)
-        
+        if compute_args().tutorial == "help":    
+            print("ship : are structures capable, after a certain number of generations, of producing a copy of themselves, but shifted in the game universe") 
+            print("kok : Kok's galaxy is a volatility-1 period-8 oscillator found by Jan Kok in 1971")  
+            print("clock : a clock osclillator")
+            exit()       
+        if compute_args().tutorial != "":    
+            tab, ball_mode = tutorial()                    
         generation=0 
-        while True:            
+        while ngen==-1 or generation<=ngen:            
             os.system('clear')
 
             display_grid(tab, show_death)
@@ -49,10 +55,69 @@ def pyconwaysgame():
 
             tab=generate_new_grid(tab, ball_mode, min_to_life, max_to_life, min_to_born, max_to_born)
             generation = generation +1    
-
+        print("game ower!!!")
+        exit()
     except KeyboardInterrupt:
         printwarning("onway's game was interrupted by the user. bye!")
+        print("game ower!!!")
         exit()
+
+def tutorial():
+    if compute_args().tutorial == "ship":
+        tab=[
+                [0,0,1,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,1,0,0,0,0,0,0,0,0,0,0,0],
+                [0,1,1,1,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],                                  
+                ]
+        ball_mode = True   
+    if compute_args().tutorial == "kok":
+        tab=[
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,1,1,0,1,1,1,1,1,1,0,0,0],
+                [0,0,0,1,1,0,1,1,1,1,1,1,0,0,0],
+                [0,0,0,1,1,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,1,1,0,0,0,0,0,1,1,0,0,0],
+                [0,0,0,1,1,0,0,0,0,0,1,1,0,0,0],
+                [0,0,0,1,1,0,0,0,0,0,1,1,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,1,1,0,0,0],
+                [0,0,0,1,1,1,1,1,1,0,1,1,0,0,0],
+                [0,0,0,1,1,1,1,1,1,0,1,1,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],                                  
+                ]
+        ball_mode=False        
+    if compute_args().tutorial == "clock":
+        tab=[
+                [0,0,0,0,0,0,1,1,0,0,0,0],
+                [0,0,0,0,0,0,1,1,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,1,1,1,1,0,0,0,0],
+                [1,1,0,1,0,0,1,0,1,0,0,0],
+                [1,1,0,1,0,1,0,0,1,0,0,0],
+                [0,0,0,1,0,1,0,0,1,0,1,1],
+                [0,0,0,1,0,0,0,0,1,0,1,1],
+                [0,0,0,0,1,1,1,1,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,1,1,0,0,0,0,0,0],
+                [0,0,0,0,1,1,0,0,0,0,0,0],                                                 
+                ]
+        ball_mode = False
+    return tab,ball_mode
 
 def generate_new_grid(tab, ball_mode, min_to_life, max_to_life, min_to_born, max_to_born):
     new_tab=copy.deepcopy(tab)    
@@ -119,6 +184,7 @@ def init_args():
     speed = compute_args().speed
     bad_param=False
     manual=False
+    ngen = compute_args().number
     if speed<0 or speed>10:
         printwarning("invalid speed argument : it must be in 0-10")
         bad_param=True
@@ -164,7 +230,7 @@ def init_args():
         exit(1)
     if compute_args().speed == 0:
         manual=True
-    return tab,show_death,ball_mode,speed,manual,lines,columns,ratio,min_to_life,max_to_life,min_to_born,max_to_born
+    return ngen,tab,show_death,ball_mode,speed,manual,lines,columns,ratio,min_to_life,max_to_life,min_to_born,max_to_born
 
 
 
