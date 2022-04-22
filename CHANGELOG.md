@@ -2,6 +2,8 @@
 
 - clean code
 - add minimal test
+- windows compatibility
+- remove 3.6 python compatibility
 
 
 ## 2.1.1
