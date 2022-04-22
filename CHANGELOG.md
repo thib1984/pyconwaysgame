@@ -1,7 +1,14 @@
+## 2.1.2
+
+- clean code
+- add minimal test
+
+
 ## 2.1.1
 
 - add clean error if can't fit
 - add gun and puffer
+
 ## 2.1.0
 
 - add --number for number generation

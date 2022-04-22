@@ -25,45 +25,57 @@ def pyconwaysgame():
     """
     pyconwaysgame entry point
     """
+    #fix potential windows bug
     colorama.init();
     if compute_args().update:
         update()
         exit()
-             
+    if compute_args().tutorial == "help":    
+        print_tutorial()
+        exit()
+
+    #init game                    
+    ngen, tab, show_death, ball_mode, speed, manual, lines, columns, ratio, min_to_life, max_to_life, min_to_born, max_to_born = init_args()
+    if not compute_args().grid and compute_args().tutorial == "":
+        tab = generate_random_grid(lines, columns, ratio)
+    elif compute_args().tutorial != "":    
+        tab, ball_mode = tutorial()                    
+    generation=0 
+    
+    #main loop
     try:
-        ngen, tab, show_death, ball_mode, speed, manual, lines, columns, ratio, min_to_life, max_to_life, min_to_born, max_to_born = init_args()
-        if not compute_args().grid and compute_args().tutorial == "":
-            tab = generate_random_grid(lines, columns, ratio)
-        if compute_args().tutorial == "help":    
-            print("ship   : are structures capable, after a certain number of generations, of producing a copy of themselves, but shifted in the game universe") 
-            print("kok    : Kok's galaxy is a volatility-1 period-8 oscillator found by Jan Kok in 1971")  
-            print("clock  : a clock osclillator")
-            print("gun    : a ship generator with 2 bullets")
-            print("puffer : a puffer is an object in the game of life occurring, but, unlike the ship, the puffer leaves more or less debris")
-            exit()       
-        if compute_args().tutorial != "":    
-            tab, ball_mode = tutorial()                    
-        generation=0 
-        while ngen==-1 or generation<=ngen:            
+        while ngen==-1 or generation<=ngen:
+
+            #print
             os.system('clear')
-
             display_grid(tab, show_death)
-
             print("generation number : " + str(generation))           
             print("press ctrl-c to safe exit")
+            
+            #wait
             if manual:
                 input("pause")
             else:        
                 time.sleep(1/speed)
 
+            #generation
             tab=generate_new_grid(tab, ball_mode, min_to_life, max_to_life, min_to_born, max_to_born)
-            generation = generation +1    
-        print("game ower!!!")
+            generation = generation +1
+
+        #end game        
+        print("game over!!!")
         exit()
     except KeyboardInterrupt:
         printwarning("onway's game was interrupted by the user. bye!")
         print("game ower!!!")
         exit()
+
+def print_tutorial():
+    print("ship   : are structures capable, after a certain number of generations, of producing a copy of themselves, but shifted in the game universe") 
+    print("kok    : Kok's galaxy is a volatility-1 period-8 oscillator found by Jan Kok in 1971")  
+    print("clock  : a clock osclillator")
+    print("gun    : a ship generator with 2 bullets")
+    print("puffer : a puffer is an object in the game of life occurring, but, unlike the ship, the puffer leaves more or less debris")
 
 def tutorial():
     if compute_args().tutorial == "ship":
@@ -352,5 +364,4 @@ def update():
     subprocess.check_call(params)
 
 def printwarning(txt):
-
     print(colored(txt,"yellow"))    
