@@ -29,8 +29,6 @@ def pyconwaysgame():
     colorama.init()
     os.sys.stdin.reconfigure(encoding='utf-8')
     os.sys.stdout.reconfigure(encoding='utf-8')
-    if os.name == 'nt':
-        os.system("chcp 65001")
     if compute_args().update:
         update()
         exit()
