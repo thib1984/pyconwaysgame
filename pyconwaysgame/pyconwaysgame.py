@@ -26,7 +26,9 @@ def pyconwaysgame():
     pyconwaysgame entry point
     """
     #fix potential windows bug
-    colorama.init();
+    colorama.init()
+    if os.name == 'nt':
+        os.system("chcp 65001")
     if compute_args().update:
         update()
         exit()
