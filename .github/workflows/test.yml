@@ -37,4 +37,4 @@ jobs:
       - name: minimal test
         run: |
           pyconwaysgame -n 100 -s 10
-          pyconwaysgame -t ship -s 10 -n 50          
+          pyconwaysgame -t clock -s 10 -n 50          
