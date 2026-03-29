@@ -1,3 +1,7 @@
+## 3.0.0
+
+- clean docs
+
 ## 2.1.2
 
 - clean code

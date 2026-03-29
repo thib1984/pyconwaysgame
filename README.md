@@ -38,37 +38,24 @@ optional arguments:
   -u, --update        self-update, alternatively, use pip(3) install --upgrade pyconwaysgame for manual update
 
 ```  
-## ⚙️ Install/Upgrade
+# ⚙️ Install
 
-### Prerequisites
+See [this page](INSTALL.md)
 
-- Install Python 3 for your system
-- Install pip3* for your system
-- Install git for your system
+# :construction_worker: Contribution
 
+See [this page](CONTRIBUTING.md)
 
- ### Installation 
-
-``pip3 install pyconwaysgame``
-
-### Upgrade
-
-
-``pyconwaysgame -u``
- 
- or
-
- `` pip3 install --upgrade pyconwaysgame``
-
-*_Install pip instead of pip3, if pip3 does not exist for your OS_
-
-## :package: Changelog
+# :package: Changelog
 
 See [this page](CHANGELOG.md)
 
-## License
+
+# License
 
 MIT License
 
-See [this page](LICENSE) for details
+Copyright (c) 2022 [thib1984](https://github.com/thib1984)
+
+See [this page](LICENSE.txt) for details
 
