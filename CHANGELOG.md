@@ -1,3 +1,8 @@
+## 3.1.0
+
+- disable self update
+- clean docs
+
 ## 3.0.0
 
 - clean docs

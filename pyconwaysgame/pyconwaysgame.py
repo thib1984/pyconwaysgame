@@ -29,9 +29,6 @@ def pyconwaysgame():
     colorama.init()
     os.sys.stdin.reconfigure(encoding='utf-8')
     os.sys.stdout.reconfigure(encoding='utf-8')
-    if compute_args().update:
-        update()
-        exit()
     if compute_args().tutorial == "help":    
         print_tutorial()
         exit()
@@ -349,21 +346,6 @@ def count_voisins(tab, i, j,ball_mode):
             nb_vivantes=nb_vivantes+1                
     return nb_vivantes
 
-
-def update():
-    """
-    entry point for --update
-    """
-    prog = "pip3"
-    if (which("pip3")) is None:
-        prog = "pip"
-    params = [
-        prog,
-        "install",
-        "--upgrade",
-        "pyconwaysgame",
-    ]
-    subprocess.check_call(params)
 
 def printwarning(txt):
     print(colored(txt,"yellow"))    

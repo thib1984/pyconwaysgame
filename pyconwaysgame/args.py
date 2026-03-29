@@ -24,6 +24,17 @@ Any live cell with more than three live neighbours dies, as if by overpopulation
 Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.\n
         """,
         epilog="""
+To upgrade, run:
+    pipx upgrade pyconwaysgame --include-deps
+To install, run:
+    pipx install pyconwaysgame
+To force reinstall, run:
+    pipx install pyconwaysgame --force
+To uninstall, run:
+    pipx uninstall pyconwaysgame
+To force uninstall (if needed), run:
+    pipx uninstall pyconwaysgame --force
+            
 Full documentation at: <https://github.com/thib1984/pyconwaysgame>
 Report bugs to <https://github.com/thib1984/pyconwaysgame/issues>
 MIT Licence
@@ -122,13 +133,7 @@ Written by thib1984."""
         type=str,
         default="",
         help="pre-calculated map, launch -t help to see availables map. Overrides few options as -b/-c/-l.",
-    )     
-    my_parser.add_argument(
-        "-u",
-        "--update",
-        action="store_true",
-        help="self-update, alternatively, use pip(3) install --upgrade pyconwaysgame for manual update",
-    ),                   
+    )                     
 
     args = my_parser.parse_args()
     return args

@@ -35,7 +35,6 @@ optional arguments:
   -l X, --lines X     number of lines in the randomed grid, 10 by default, range : 0-200
   -r X, --ratio X     alived element probability ratio for each random grid cell (50 by default), range : 0-200
   -t X, --tutorial X  pre-calculated map, launch -t help to see availables map. Overrides few options as -b/-c/-l.
-  -u, --update        self-update, alternatively, use pip(3) install --upgrade pyconwaysgame for manual update
 
 ```  
 # ⚙️ Install
