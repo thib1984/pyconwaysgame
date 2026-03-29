@@ -1,3 +1,7 @@
+## 3.1.1
+
+- display versions
+
 ## 3.1.0
 
 - disable self update

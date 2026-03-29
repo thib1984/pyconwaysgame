@@ -5,8 +5,18 @@ pygitscrum argparse gestion
 import argparse
 import sys
 from argparse import RawTextHelpFormatter
+import importlib.metadata
 
+def get_env_report():
+    lines = []
 
+    lines.append("\nInstalled packages:")
+    for dist in sorted(importlib.metadata.distributions(), key=lambda d: d.metadata["Name"].lower()):
+        name = dist.metadata["Name"]
+        version = dist.version
+        lines.append(f"  - {name}=={version}")
+
+    return "\n".join(lines)
 
 def compute_args():
     """
@@ -23,7 +33,7 @@ Any live cell with two or three live neighbours lives on to the next generation.
 Any live cell with more than three live neighbours dies, as if by overpopulation.
 Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.\n
         """,
-        epilog="""
+        epilog=f"""
 To upgrade, run:
     pipx upgrade pyconwaysgame --include-deps
 To install, run:
@@ -34,7 +44,9 @@ To uninstall, run:
     pipx uninstall pyconwaysgame
 To force uninstall (if needed), run:
     pipx uninstall pyconwaysgame --force
-            
+
+{get_env_report()}
+
 Full documentation at: <https://github.com/thib1984/pyconwaysgame>
 Report bugs to <https://github.com/thib1984/pyconwaysgame/issues>
 MIT Licence
