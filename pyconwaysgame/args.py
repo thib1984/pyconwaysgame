@@ -35,7 +35,8 @@ Any dead cell with exactly three live neighbours becomes a live cell, as if by r
         """,
         epilog=f"""
 To upgrade, run:
-    pipx upgrade pyconwaysgame --include-deps
+    pipx upgrade pyconwaysgame
+    pipx reinstall pyconwaysgame #to force update dependencies
 To install, run:
     pipx install pyconwaysgame
 To force reinstall, run:

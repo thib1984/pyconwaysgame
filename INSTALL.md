@@ -30,10 +30,9 @@ pipx install pyconwaysgame
 # Upgrade
 
 ```
-pipx upgrade pyconwaysgame --include-deps
+pipx upgrade pyconwaysgame
+pipx reinstall pyconwaysgame #to force update dependencies
 ```
-
-This command upgrades the application to the latest version and also updates all its dependencies.
 
 # Uninstall
 
